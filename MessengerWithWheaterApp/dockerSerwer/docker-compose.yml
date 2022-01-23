@@ -1,0 +1,28 @@
+version: "3.0"
+
+
+services: 
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1234321
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  chat:
+    image: shutup
+    depends_on: 
+      - db
+    restart: always
+    ports: 
+      - 8000:8000
+    environment: 
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: 1234321
+

@@ -1,0 +1,221 @@
+.dot {
+  height: 15px;
+  width: 15px;
+  
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hourly {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+
+  .bar {
+    width: 30px;
+    margin: 0 2px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 15%;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(4, 0, 255) 0%, rgb(30, 252, 1) 25%, rgb(255, 251, 0) 50%, rgb(255, 0, 0) 75%);
+    background-size: 10000px 10000px;
+
+    span {
+      font-weight: bold;
+      font-size: 0.8em;
+      color: white;
+      text-shadow: 0 0 3px black;
+    }
+
+    .hour {
+      position: absolute;
+      bottom: -25px;
+    }
+  }
+}
+.test {
+  margin-right: 100px;
+}
+.temperature {
+  color:rgb(255, 251, 2);
+}
+
+.bubble{
+  border-radius: 10%;
+  width: 50%;
+  min-height: 70px;
+  word-wrap: break-word;
+}
+
+.wetcontainer{
+  width: 6vh;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+.hot{
+  position: absolute;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 40%;
+  background: linear-gradient(to top right, rgba(255,87,34,1)0%,rgba(251,140,0,1)100%);
+  box-shadow: 1px 1px 30px rgba(255,160,0,1);
+  #sun{
+    position: absolute;
+    right: 0;
+    width: 2vh;
+    height: 2vh;
+    border-radius: 100%;
+    background: linear-gradient(to bottom left, rgba(255,253,59,1)0%,rgba(249,168,37,1)90%);
+    box-shadow: 1px 1px 30px rgba(255,160,0,1);
+    animation: hot_sun 2s linear infinite;
+  }
+  #sun2{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 0.4vh;
+    height: 0.4vh;
+    height: 0.4vh;
+    border-radius: 100%;
+    background-color: #aaa;
+    opacity: 0.4;
+  }
+}
+
+@keyframes hot_sun {
+  0%,100%{opacity: 1;}
+  50%{opacity: 0.6;}
+}
+
+.cloudy{
+  position: absolute;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 40%;
+  background: linear-gradient(to top right, rgba(63,81,181,1)0%,rgba(3,155,229,1)40%);
+  box-shadow: 1px 1px 30px rgba(2,119,189,1);
+  #cloud{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 3vh;
+    height: 1vh;
+    border-radius: 10px;
+    background-color: rgba(129,212,250,1);
+    animation: move 2s linear infinite;
+    
+  }
+  #cloud:nth-child(2){
+    top: 15px;
+    left: 30%;
+  }
+}
+
+@keyframes move {
+  50%{transform: translate(-10px);}
+}
+
+.snow{
+  position: absolute;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 40%;
+  background: linear-gradient(to top right, rgb(117,117,117)0%,rgb(33,33,33)90%);
+  box-shadow: 1px 1px 30px rgba(33,33,33,1);
+
+  #head{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 1vh;
+    width: 1vh;
+    border-radius: 15px;
+    background-color: rgba(255, 251, 27, 0.63);
+    z-index: 5;
+  }
+ 
+  #body{
+    position: absolute;
+    top: 60%;
+    left: 43%;
+    height: 2vh;
+    width: 2vh;
+    border-radius: 60px;
+    background-color: rgb(255, 251, 27);
+    z-index: 4;
+  }
+
+  #stick{
+    position: absolute;
+    width: 20px;
+    height: 0.2vh;
+    transform: rotate(45deg);
+    background-color: rgb(80, 43, 0);
+    top: 73%;
+    left: 30%;
+  }
+
+  #stick2{
+    position: absolute;
+    width: 20px;
+    height: 0.2vh;
+    transform: rotate(-45deg);
+    background-color: rgb(80, 43, 0);
+    top: 73%;
+    left: 65%;
+  }
+
+  ul{
+    li{
+      width: 0.4vh;
+      height: 0.4vh;
+      border-radius: 50%;
+      list-style-type: none;
+      background-color: rgb(119,119,119);
+      box-shadow: rgba(85,85,85,1) 1px 1px 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      animation: snowfall 5s linear infinite;
+    }
+
+  }
+  ul li:nth-child(2){
+    top: 30px;
+  }
+  ul li:nth-child(3){
+    top:12px
+  }
+  ul li:nth-child(4){
+    top: 24px;
+  }
+  ul li:nth-child(5){
+    top: 6px;
+    right: 3px;
+  }
+  ul li:nth-child(6){
+    top: 0px;
+    right: 30px;
+  }
+  ul li:nth-child(7){
+    top: 5.4px;
+    right: 18px;
+  }
+  ul li:nth-child(8){
+    top: -5.4px;
+    right: 6px;
+  }
+}
+
+@keyframes snowfall{
+  20%{opacity: 1;}
+  100%{transform: translate(-10px,25px);
+    opacity: 0.5%;}
+}

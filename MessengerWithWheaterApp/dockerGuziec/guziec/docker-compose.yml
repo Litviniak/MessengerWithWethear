@@ -1,0 +1,6 @@
+services:
+  guziec:
+    image: guziec
+    restart: "always"
+    ports:
+      - 4200:80
